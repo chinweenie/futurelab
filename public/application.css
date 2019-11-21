@@ -1,0 +1,218 @@
+/* 720 x 1280 */
+html {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+body {
+    height: 600px;
+    width: 360px;
+    border: 1px solid black;
+    font-family: 'Open Sans';
+    cursor: pointer;
+}
+
+
+.session-form {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.logo > img {
+    width: 80%;
+}
+
+.session-form .form, .mentor-index .title {
+    padding-left: 10%;
+    padding-right: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.session-form .header {
+    font-weight: bold;
+    font-size: 129%;
+}
+
+#email-input, #password-input {
+    height: 30px;
+    border: 1px solid gray;
+    border-radius: 5%;
+    width: 290px;
+    padding-left: 10px;
+    color: gray;
+    font-family: 'Open Sans';
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
+
+.session-form .form p, span, .fa-eye {
+    font-size: 12px;
+    margin: 8px 0;
+    font-weight: 100;
+    color: gray;
+}
+
+.fa-eye {
+     margin-right: 5px;
+}
+
+.password-show {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    background: #4C90E2;
+    color: white;
+    width: 90%;
+    height: 50px;
+    margin-top: 20px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 15px;
+    justify-content: space-between;
+}
+
+.forgot-password {
+    margin-top: 8px;
+    color: #4C90E2;
+    font-size: 12px;
+    font-weight: 100;
+}
+
+footer {
+    margin-top: 10.5%;
+    display: flex;
+    align-self: flex-end;
+}
+
+footer > img {
+    align-self: flex-end;
+    width: 360px;
+}
+
+.blue {
+    background: #2a9fd8;
+    opacity: 30%;
+    width: max-content;
+}
+
+.mentor-index {
+    margin-top: 10px;
+}
+
+.mentor-index .title {
+    font-weight: bolder;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 10px;
+    color: gray;
+}
+
+.mentor-index .title img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.upcoming-event {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.event-box {
+    color: white;
+    border-radius: 5px;
+    background: #4A90E2;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.left-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1.5px solid white;
+    font-size: 20px;
+    width: 10%;
+    padding: 20px;
+    text-align: center;
+    
+}
+
+.right-section {
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.right-section > p {
+    margin: 0;
+}
+
+.right-section > h4 {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+.fa-clock {
+    margin-right: 5px;
+}
+
+.action-row {
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.fa-undo {
+    margin-right: 5px;
+}
+
+.fa-times {
+    margin-left: 30px;
+    margin-right: 5px;
+}
+
+.navbar {
+    display: flex;
+}
+
+.navbar > ul {
+    color: gray;
+    display: flex;
+    list-style: none;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+    font-size: 13px;
+    padding: 10px;
+}
+.chat, .appointment {
+    position: relative;
+}
+
+.fa-circle {
+    color: red;
+    font-size: 5px;
+    position: absolute;
+    margin-left: 2px;
+}
+
+
