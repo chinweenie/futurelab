@@ -108,6 +108,8 @@ footer > img {
 
 .mentor-index {
     margin-top: 10px;
+    position: relative;
+    overflow-y: auto;
 }
 
 .mentor-index .title {
@@ -192,9 +194,13 @@ footer > img {
 
 .navbar {
     display: flex;
+    border-top: 4px solid #EAEAEA;
+    position: absolute;
+    top: 220%;
 }
 
 .navbar > ul {
+    margin-top: 5px;
     color: gray;
     display: flex;
     list-style: none;
@@ -214,5 +220,83 @@ footer > img {
     position: absolute;
     margin-left: 2px;
 }
+
+.slider {
+    display: flex;
+    align-items: center;
+}
+
+.active-sessions {
+    margin-top: 20px;
+}
+
+.active-sessions > p {
+    padding-left: 30px;
+}
+
+.active-sessions-carousel {
+    display: flex;
+    justify-content: center;
+    width: 80%;
+}
+
+.active-session-li {
+    list-style: none;
+    width: 100%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 10px #F7F7F7;
+    position: relative;
+    padding: 10px 20px;
+    margin-top: 55px;
+    margin-left: 0;
+}
+
+.active-session-li img {
+    position: absolute;
+    width: 90px;
+    border-radius: 50%;
+    top: -25%;
+    left: 8%;
+}
+
+.profile {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+.fa-comment {
+    color: gray;
+    font-size: 19px;
+}
+
+.name {
+    color: #5E9CD1;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+.occupation, .location, .last-session {
+    color: gray;
+    font-size: 16px;
+}
+
+.last-session > p {
+    font-size: 13px;
+    color: #D9D9D9;
+    font-weight: bold;
+}
+
+.create {
+    background: #4A90E2;
+    padding: 15px;
+    color: white;
+}
+
+.fa-arrow-right {
+    margin-left: 30px;
+}
+
 
 

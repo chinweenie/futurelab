@@ -1,7 +1,6 @@
 import React from 'react';
 import Slide from './slide';
 import Arrow from './arrow';
-import LoadingIcon from '../loading_icon';
 
 
 export default class Slider extends React.Component {
@@ -27,7 +26,7 @@ export default class Slider extends React.Component {
     };
 
     nextSlide() {
-        const lastIndex = this.props.imageUrls.length - 1;
+        const lastIndex = this.props.items.length - 1;
         const { currentImageIndex } = this.state;
         const shouldResetIndex = currentImageIndex === lastIndex
         const index = shouldResetIndex ? 0 : currentImageIndex + 1;
@@ -38,11 +37,7 @@ export default class Slider extends React.Component {
     };
 
     render() {
-        if (!this.props.imageUrls) {
-            return (
-                <LoadingIcon />
-            )
-        }
+        let { items } = this.props;
 
         return (
             <div className="slider">
@@ -52,7 +47,7 @@ export default class Slider extends React.Component {
                     clickFunction={this.previousSlide}
                     glyph="&#9664;" />
 
-                <Slide url={this.props.imageUrls[this.state.currentImageIndex]} />
+                <Slide item={items[this.state.currentImageIndex]} />
 
                 <Arrow
                     direction="right"

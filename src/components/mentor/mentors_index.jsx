@@ -1,7 +1,69 @@
 import React, {Component} from 'react'
+import Slide from '../carousel/slide'
+import Slider from '../carousel/slider';
 
 export default class MentorsIndex extends React.Component {
+    constructor(props) {
+        super(props);
+        this.activeSessions = [
+            {
+                name: "Kyle Carpenter",
+                occupation: "Student",
+                location: "INIT College",
+                lastSession: "10 May 2019 at 2.30PM",
+                profileImage: "32.jpg"
+            }, {
+                name: "Ada Lovelace",
+                occupation: "Tutor",
+                location: "San Francisco",
+                lastSession: "11 May 2019 at 2.30PM",
+                profileImage: "81.jpg"
+            }, {
+                name: "Alan Turing",
+                occupation: "Computer Scientist",
+                location: "London",
+                lastSession: "17 May 2019 at 2.30PM",
+                profileImage: "36.jpg"
+            }, {
+                name: "Grace Hopper",
+                occupation: "Academia researcher",
+                location: "New York",
+                lastSession: "14 May 2019 at 2.30PM",
+                profileImage: "58.jpg"
+            }
+        ]
+    }
+
     render() {
+        const activeSessionsLi = this
+            .activeSessions
+            .map(session => {
+                return (
+                    <li className="active-session-li">
+                        <div className="profile">
+                            <img src={session.profileImage} alt=""/>
+                            <i className="fas fa-comment"></i>
+                        </div>
+                        <div className="name">
+                            {session.name}
+                        </div>
+                        <div className="occupation">
+                            {session.occupation}
+                        </div>
+                        <div className="location">
+                            {session.location}
+                        </div>
+                        <div className="last-session">
+                            <p>Last session</p>
+                            {session.lastSession}
+                        </div>
+                        <div className="create">
+                            CREATE APPOINTMENT
+                            <i className="fas fa-arrow-right"></i>
+                        </div>
+                    </li>
+                )
+            })
         return (
             <div className="mentor-index">
                 <div className="title">
@@ -29,25 +91,32 @@ export default class MentorsIndex extends React.Component {
                         </div>
                     </div>
                 </div>
-                <div>
-                    Your active sessions
+                <div className="active-sessions">
+                    <p>
+                        Your active sessions
+                    </p>
                     <div className="active-sessions-carousel">
-                        
+                        <Slider items={activeSessionsLi}/>
                     </div>
                 </div>
                 <div>
                     Mentors in portal
-                    <div className="mentors-carousel">
-
-                    </div>
+                    <div className="mentors-carousel"></div>
                 </div>
                 <div className="navbar">
                     <ul>
-                        <li><i className="fa fa-home"></i>Home</li>
-                        <li className="chat"><i className="far fa-comment-alt"></i><i class="fa fa-circle"></i>Chat</li>
-                        <li className="appointment"><i className="fa fa-calendar-check-o"></i><i class="fa fa-circle"></i>Appointments</li>
-                        <li><i className="fa fa-bell-o"></i>Notifications</li>
-                        <li><i className="fa fa-user-o"></i>Members</li>
+                        <li>
+                            <i className="fa fa-home"></i>Home</li>
+                        <li className="chat">
+                            <i className="far fa-comment-alt"></i>
+                            <i className="fa fa-circle"></i>Chat</li>
+                        <li className="appointment">
+                            <i className="fa fa-calendar-check-o"></i>
+                            <i className="fa fa-circle"></i>Appointments</li>
+                        <li>
+                            <i className="fa fa-bell-o"></i>Notifications</li>
+                        <li>
+                            <i className="fa fa-user-o"></i>Members</li>
                     </ul>
                 </div>
 
