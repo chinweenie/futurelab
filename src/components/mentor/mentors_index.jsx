@@ -7,29 +7,37 @@ export default class MentorsIndex extends React.Component {
         super(props);
         this.activeSessions = [
             {
-                name: "Kyle Carpenter",
-                occupation: "Student",
+                name: "Kyle",
+                occupation: "Senior Manager",
                 location: "INIT College",
                 lastSession: "10 May 2019 at 2.30PM",
-                profileImage: "32.jpg"
+                profileImage: "32.jpg",
+                introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                skills: ["Web development", "Branding", "Marketing and Advertising"]
             }, {
-                name: "Ada Lovelace",
+                name: "Ada",
                 occupation: "Tutor",
                 location: "San Francisco",
                 lastSession: "11 May 2019 at 2.30PM",
-                profileImage: "81.jpg"
+                profileImage: "81.jpg",
+                introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                skills: ["Web development", "Branding", "Marketing and Advertising"]
             }, {
-                name: "Alan Turing",
+                name: "Alan",
                 occupation: "Computer Scientist",
                 location: "London",
                 lastSession: "17 May 2019 at 2.30PM",
-                profileImage: "36.jpg"
+                profileImage: "36.jpg",
+                introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                skills: ["Web development", "Branding", "Marketing and Advertising"]
             }, {
-                name: "Grace Hopper",
+                name: "Grace",
                 occupation: "Academia researcher",
                 location: "New York",
                 lastSession: "14 May 2019 at 2.30PM",
-                profileImage: "58.jpg"
+                profileImage: "58.jpg",
+                introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                skills: ["Web development", "Branding", "Marketing and Advertising"]
             }
         ];
         this.mentors = [
@@ -61,6 +69,7 @@ export default class MentorsIndex extends React.Component {
         this.toggleName = this
             .toggleName
             .bind(this);
+        this.openProfile = this.openProfile.bind(this);
     }
 
     toggleName(event) {
@@ -76,6 +85,12 @@ export default class MentorsIndex extends React.Component {
         }, 300);
     }
 
+    openProfile(profile) {
+        return event => {
+            this.props.history.push(`/mentors/${profile.name}`);
+        }
+    }
+
     render() {
         const activeSessionsLi = this
             .activeSessions
@@ -86,7 +101,7 @@ export default class MentorsIndex extends React.Component {
                             <img src={session.profileImage} alt=""/>
                             <i className="fas fa-comment"></i>
                         </div>
-                        <div className="name">
+                        <div className="name" onClick={this.openProfile(session)}>
                             {session.name}
                         </div>
                         <div className="occupation">
