@@ -7,7 +7,7 @@ const App = () => (
     <div>
         {/* Route declaration */}
         <Switch>
-            <Route exact path='/login' component={SessionForm}/>
+            <Route exact path='/' component={SessionForm}/>
             <Route exact path='/mentors/index' component={MentorsIndex}/>
             <Route exact path='/mentors/:name' component={MentorProfile}/>
         </Switch>
