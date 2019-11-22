@@ -26,16 +26,7 @@ export default class MentorProfile extends Component {
                 profileImage: "32.jpg",
                 introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i" +
                         "ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru" +
-                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut" +
-                        "e irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n" +
-                        "ulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui" +
-                        " officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consect" +
-                        "etur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna" +
-                        " aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi" +
-                        " ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in v" +
-                        "oluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occae" +
-                        "cat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id es" +
-                        "t laborum.",
+                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut",
                 skills: [
                     "Web development", "Branding", "Marketing and Advertising"
                 ],
@@ -67,10 +58,7 @@ export default class MentorProfile extends Component {
                 profileImage: "81.jpg",
                 introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i" +
                         "ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru" +
-                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut" +
-                        "e irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n" +
-                        "ulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui" +
-                        " officia deserunt mollit anim id est laborum.",
+                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut",
                 skills: [
                     "Web development", "Branding", "Marketing and Advertising"
                 ],
@@ -102,10 +90,7 @@ export default class MentorProfile extends Component {
                 profileImage: "36.jpg",
                 introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i" +
                         "ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru" +
-                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut" +
-                        "e irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n" +
-                        "ulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui" +
-                        " officia deserunt mollit anim id est laborum.",
+                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut",
                 skills: [
                     "Web development", "Branding", "Marketing and Advertising"
                 ],
@@ -137,10 +122,7 @@ export default class MentorProfile extends Component {
                 profileImage: "58.jpg",
                 introduction: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i" +
                         "ncididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostru" +
-                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aut" +
-                        "e irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat n" +
-                        "ulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui" +
-                        " officia deserunt mollit anim id est laborum.",
+                        "d exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ",
                 skills: [
                     "Web development", "Branding", "Marketing and Advertising"
                 ],
@@ -151,6 +133,12 @@ export default class MentorProfile extends Component {
                 }
             }
         };
+        this.back = this.back.bind(this);
+    }
+
+    back(event){
+        event.preventDefault();
+        this.props.history.push(`/mentors/index`);
     }
 
     render() {
@@ -159,9 +147,9 @@ export default class MentorProfile extends Component {
             .skills
             .map(skill => {
                 return (
-                    <li className="skill-li" key={skill}>
+                    <div className="skill-li" key={skill}>
                         {skill}
-                    </li>
+                    </div>
                 )
             });
         const occupationLi = profile
@@ -169,12 +157,14 @@ export default class MentorProfile extends Component {
             .map(job => {
                 return (
                     <li className="job-li" key={job.title}>
-                        <div className="work-logo"></div>
+                        <div className="work-logo">
+                            <i className="fas fa-briefcase"></i>
+                        </div>
                         <div className="work-detail">
                             <h5>{job.title}</h5>
-                            <p>{job.company}</p>
+                            <p><i className="far fa-building"></i>{job.company}</p>
                             <p>{job.duration}</p>
-                            <p>Show details</p>
+                            <p className="blue-text">Show details</p>
                         </div>
                     </li>
                 )
@@ -182,7 +172,7 @@ export default class MentorProfile extends Component {
         return (
             <div className="mentor-profile">
                 <div className="header-bar">
-                    <i className="fas fa-arrow-left"></i>
+                    <i className="fas fa-arrow-left" onClick={this.back}></i>
                 </div>
                 <div className="profile-section">
                     <img src={profile.profileImage} alt=""/>
@@ -199,11 +189,15 @@ export default class MentorProfile extends Component {
                     </div>
                     <div className="profile-action">
                         <div>
-                            <i className="far fa-calendar-alt"></i>
+                            <div>
+                                <i className="far fa-calendar-alt"></i>
+                            </div>
                             Book
                         </div>
                         <div>
-                            <i className="far fa-comment-dots"></i>
+                            <div>
+                                <i className="far fa-comment-dots"></i>
+                            </div>
                             Chat
                         </div>
                     </div>
@@ -227,9 +221,12 @@ export default class MentorProfile extends Component {
                         </ul>
                     </div>
                     <div className="education">
+                        <h4>Education</h4>
                         <ul className="education-ul">
                             <li className="education-li">
-                                <div className="education-logo"></div>
+                                <div className="education-logo">
+                                    <img src="Berkeley-logo.jpg" alt=""/>
+                                </div>
                                 <div className="education-detail">
                                     <h5>{profile.education.title}</h5>
                                     <p>{profile.education.institution}</p>
