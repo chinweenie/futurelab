@@ -31,7 +31,49 @@ export default class MentorsIndex extends React.Component {
                 lastSession: "14 May 2019 at 2.30PM",
                 profileImage: "58.jpg"
             }
+        ];
+        this.mentors = [
+            {
+                name: "Brian",
+                profile: "96.jpg"
+            },
+            {
+                name: "Devon",
+                profile: "47.jpg"
+            },
+            {
+                name: "Kay",
+                profile: "66.jpg"
+            },
+            {
+                name: "Wanda",
+                profile: "42.jpg"
+            },
+            {
+                name: "Becky",
+                profile: "43.jpg"
+            },
+            {
+                name: "Margie",
+                profile: "79.jpg"
+            }
         ]
+        this.toggleName = this
+            .toggleName
+            .bind(this);
+    }
+
+    toggleName(event) {
+        event.preventDefault();
+        const name = document.getElementsByClassName("name")[0];
+        name
+            .classList
+            .toggle("blue");
+        setTimeout(() => {
+            name
+                .classList
+                .toggle("blue");
+        }, 300);
     }
 
     render() {
@@ -39,7 +81,7 @@ export default class MentorsIndex extends React.Component {
             .activeSessions
             .map(session => {
                 return (
-                    <li className="active-session-li">
+                    <li className="active-session-li" onClick={this.toggleName}>
                         <div className="profile">
                             <img src={session.profileImage} alt=""/>
                             <i className="fas fa-comment"></i>
@@ -63,7 +105,17 @@ export default class MentorsIndex extends React.Component {
                         </div>
                     </li>
                 )
+            });
+
+            const mentorsLi = this.mentors.map(mentor => {
+                return (
+                    <li className="mentor-li">
+                        <img src={mentor.profile} alt=""/>
+                        {mentor.name}
+                    </li>
+                )
             })
+            
         return (
             <div className="mentor-index">
                 <div className="title">
@@ -75,7 +127,7 @@ export default class MentorsIndex extends React.Component {
                     </div>
 
                 </div>
-                <div className="upcoming-event">
+                <div className="upcoming-event" onClick={this.toggleName}>
                     <div className="event-box">
                         <div className="left-section">
                             24 OCT
@@ -99,9 +151,13 @@ export default class MentorsIndex extends React.Component {
                         <Slider items={activeSessionsLi}/>
                     </div>
                 </div>
-                <div>
-                    Mentors in portal
-                    <div className="mentors-carousel"></div>
+                <div className="mentors-list-section">
+                    <p>
+                        Mentors in portal
+                    </p>
+                    <div className="mentors-carousel">
+                        {mentorsLi}
+                    </div>
                 </div>
                 <div className="navbar">
                     <ul>

@@ -104,12 +104,13 @@ footer > img {
     background: #2a9fd8;
     opacity: 30%;
     width: max-content;
+    color: white !important;
 }
 
 .mentor-index {
     margin-top: 10px;
     position: relative;
-    overflow-y: auto;
+    overflow-y: auto; 
 }
 
 .mentor-index .title {
@@ -195,8 +196,7 @@ footer > img {
 .navbar {
     display: flex;
     border-top: 4px solid #EAEAEA;
-    position: absolute;
-    top: 220%;
+    /* position: absolute; */
 }
 
 .navbar > ul {
@@ -226,29 +226,34 @@ footer > img {
     align-items: center;
 }
 
+.slider-parent {
+    display: flex;
+    flex-direction: column;
+}
+
 .active-sessions {
     margin-top: 20px;
 }
 
-.active-sessions > p {
+.active-sessions > p, .mentors-list-section > p {
     padding-left: 30px;
 }
 
 .active-sessions-carousel {
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 100%;
 }
 
 .active-session-li {
     list-style: none;
-    width: 100%;
+    width: 85%;
     border-radius: 5px;
     box-shadow: 0px 0px 10px 10px #F7F7F7;
     position: relative;
     padding: 10px 20px;
     margin-top: 55px;
-    margin-left: 0;
+    
 }
 
 .active-session-li img {
@@ -292,10 +297,73 @@ footer > img {
     background: #4A90E2;
     padding: 15px;
     color: white;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
 }
 
 .fa-arrow-right {
     margin-left: 30px;
+}
+
+.slide-arrow {
+    z-index: 11;
+    color: gray;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.indicator {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.indicator > li {
+    list-style: none;
+    margin-right: 5px;
+}
+
+.indicator-circle {
+    background: #4A90E2;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.selected{
+    width: 50px;
+    border-radius: 20%;
+}
+
+.mentors-carousel {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    width: 1000px;
+    padding-left: 30px;
+}
+
+.mentor-li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 10px #F7F7F7;
+    width: 80px;
+    height: 80px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.mentor-li > img {
+    width: 40px;
+    border-radius: 50%;
 }
 
 
