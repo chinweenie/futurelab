@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
-import Slide from '../carousel/slide'
 import Slider from '../carousel/slider';
+import SpotSlider from '../carousel-transition/spot_slider';
 
 export default class MentorsIndex extends React.Component {
     constructor(props) {
@@ -124,15 +124,21 @@ export default class MentorsIndex extends React.Component {
 
             const mentorsLi = this.mentors.map(mentor => {
                 return (
-                    <li className="mentor-li">
+                    <div className="mentor-li">
                         <img src={mentor.profile} alt=""/>
                         {mentor.name}
-                    </li>
+                    </div>
                 )
             })
             
         return (
             <div className="mentor-index">
+                <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+                <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+                <script type="text/javascript" src="slick/slick.min.js"></script>
+                <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+                // Add the new slick-theme.css if you want the default styling
+                <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
                 <div className="title">
                     <div>
                         Entrepreneurs Malaysia
@@ -171,7 +177,7 @@ export default class MentorsIndex extends React.Component {
                         Mentors in portal
                     </p>
                     <div className="mentors-carousel">
-                        {mentorsLi}
+                        <SpotSlider items={mentorsLi}/>
                     </div>
                 </div>
                 <div className="navbar">
